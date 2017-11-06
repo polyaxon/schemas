@@ -1,6 +1,6 @@
 Jinja2==2.9.6
 marshmallow==2.14.0
 numpy==1.13.3
-pytz==2017.2
+pytz==2017.3
 PyYAML==3.12
 six==1.11.0
