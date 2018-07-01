@@ -6,4 +6,4 @@ prospector==0.12.11
 pyflakes==2.0.0
 pytest==3.6.2
 pylint==1.9.2
-tox==2.9.1
+tox==3.0.0
