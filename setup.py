@@ -27,6 +27,7 @@ setup(name='polyaxon-schemas',
       version='0.4.4',
       description='Schema definitions and validation for Polyaxon.',
       long_description=read_readme(),
+      long_description_content_type="text/markdown",
       maintainer='Mourad Mourafiq',
       maintainer_email='mourad@polyaxon.com',
       author='Mourad Mourafiq',
@@ -54,7 +55,7 @@ setup(name='polyaxon-schemas',
           'numpy>=1.15.2',
           'python-dateutil>=2.7.3',
           'pytz>=2018.9',
-          'rhea==0.4.6'
+          'rhea==0.4.7'
       ],
       classifiers=[
           'Programming Language :: Python',
