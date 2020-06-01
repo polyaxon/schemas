@@ -1,6 +1,6 @@
 hestia==0.6.0
 Jinja2==2.11.2
-marshmallow==3.0.0rc5
+marshmallow==3.6.0
 numpy>=1.15.2
 python-dateutil>=2.7.3
 pytz>=2018.9
