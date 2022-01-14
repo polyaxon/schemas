@@ -18,12 +18,53 @@ import pytest
 
 from unittest import TestCase
 
-from polyaxon_schemas.utils.units import format_sizeof, to_percentage
+from polyaxon_schemas.utils.units import (
+    format_sizeof,
+    number_percentage_format,
+    to_percentage,
+)
 
 
 @pytest.mark.utils_mark
 class ToPercentageTest(TestCase):
     """A test case for the `to_percentage`."""
+
+    def test_number_format_works_as_expected(self):
+        float_nums = [
+            (123.123, "123.12"),
+            (123.1243453, "123.12"),
+            (213213213.123, "213,213,213.12"),
+        ]
+        int_nums = [(213214, "213,214"), (123213.00, "123,213")]
+
+        for num, expected in float_nums:
+            self.assertEqual(
+                number_percentage_format(num, precision=2, use_comma=True), expected
+            )
+
+        for num, expected in int_nums:
+            self.assertEqual(
+                number_percentage_format(num, precision=2, use_comma=True), expected
+            )
+
+    def test_get_percentage_works_as_expected(self):
+        float_nums = [
+            (0.123, "12.30%"),
+            (3.1243453, "312.43%"),
+            (213.12312, "21,312.31%"),
+        ]
+
+        int_nums = [(0.14, "14%"), (1.300, "130%")]
+
+        for num, expected in float_nums:
+            self.assertEqual(
+                to_percentage(num, rounding=2, precision=2, use_comma=True), expected
+            )
+
+        for num, expected in int_nums:
+            self.assertEqual(
+                to_percentage(num, rounding=2, precision=2, use_comma=True), expected
+            )
 
     def test_works_as_expected_for_valid_values(self):
         test_data = [
