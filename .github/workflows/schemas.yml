@@ -33,14 +33,14 @@ jobs:
         which python
         python -m pip install --upgrade pip
     - name: Install test dependencies
-      run: pip install -r polyaxon_schemas/requirements/test.txt
+      run: pip install -r schemas/requirements/test.txt
     - name: Install dev dependencies
-      run: pip install -r polyaxon_schemas/requirements/dev.txt
+      run: pip install -r schemas/requirements/dev.txt
     - name: Install master dependencies
-      run: pip install -r polyaxon_schemas/requirements/master.txt
+      run: pip install -r schemas/requirements/master.txt
     - name: Install dev librarie
-      run: export USE_LOCAL_PACKAGES="true" && pip install --upgrade --editable "polyaxon_schemas[dev]"
+      run: export USE_LOCAL_PACKAGES="true" && pip install --upgrade --editable "schemas[dev]"
     - name: Test with pytest
       run: |
-        cd polyaxon_schemas
+        cd schemas
         pytest -vv
